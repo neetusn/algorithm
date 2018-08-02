@@ -14,6 +14,7 @@ class LinkedList {
     }
   }
 
+
   clear() {
     this.head = null;
   }
@@ -169,6 +170,7 @@ class LinkedList {
   *[Symbol.iterator]() {
     let node = this.head;
     while (node) {
+      console.log(node);
       yield node;
       node = node.next;
     }
