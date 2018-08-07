@@ -1,0 +1,31 @@
+
+//side efffects when we do read and write from outside
+// like console log, netwok calls i/o 
+//observable and 
+// to test woudl be diffecutly to mock api an dnetwork call
+// redux thunk makes the logic to action creator and made it out of componet
+// concurrency control b/w multiple click
+// some times we return function and return object
+// with multiple events handle, network fail, test with mocking,
+// redux saga makes the side efects to 
+// modularity, easy testing, reusabity, active community since 2015
+// side effect management
+// generator functions, 
+// redux loop and observables
+// any i/o calls is considered sideeffect
+// observable effect when we have difrent o/t on the world
+function* myGen(){
+  yield 1;
+  yeild 2;
+  const double = yield a*2;
+  return double;
+}
+//generator has ability to return multiple times and 2 way communication
+// retrun iterator method and we could control 
+// instead of action creator working deamon will do continuous 
+// pass set o
+// redux saga bocking effect pause till we get the esponse
+// saga will take care of api call not need to test
+// redux saga as middelware will know when to dispatch 
+// websockets 
+

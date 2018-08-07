@@ -62,27 +62,30 @@ function merge(left, right) {
 
 module.exports = { bubbleSort, selectionSort, mergeSort };
 
-function quickSort(arr, left, right){
-    if(left < right){
-        var partitionIndex = partition(arr, left, right);
-        quickSort(arr, left, partitionIndex-1);
-        quickSort(arr, partitionIndex+1, right);
+function quickSort(arr){
+    var p = 0, r = arr.length-1;
+    if(p<r){
+        q = partition(arr, p, r);
+        quickSort(arr, p, q-1);
+        quickSort(arr, q+1, r);
     }
-    return arr;
+    // smaller input faster compare to merge
+    // though divide and conquer
 }
-function partition(arr, left, right){
-    var pivotValue = arr[right];
-    var i = left-1;
-    for(var j = left; j< right;j++){
-        if(arr[j] < pivotValue){
-            i= i+1;
+function partition(arr, p, r){
+    var x = arr[r];
+    var i = p-1;
+    // i=-1, j=0, pivote = a[0] , r=a.lentgh-1
+    for(var j = p; j< r-1;j++){
+        if(arr[j] < x){
+            i++;
             var min = arr[j];
             arr[j] = arr[i];
             arr[i] = min;  
         }
     }
-    var temp = arr[i+1];
-    arr[i+1] = arr[right];
-    arr[right] = temp;
+    var min = arr[i+1];
+    arr[i+1] = arr[r];
+    arr[r] = min;
     return i+1;
-}quickSort([9,2,3,5,7], 0, 4);
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <style>
+            .tool-tip{
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                border-bottom: 1px dotted black;
+            }
+            .tool-tip .tool-tip-text{
+                visibility: hidden;
+                width:200x;
+                bottom:100%;                /* comment here to push the hover content down */
+                position: absolute;
+            }
+            .tool-tip:hover .tool-tip-text {
+                visibility: visible;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="tool-tip"> Hover over me
+            <span class="tool-tip-text">
+                I am here 
+            </span>
+        </div>
+    </body>
+</html>

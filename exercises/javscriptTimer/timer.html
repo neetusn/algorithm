@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script >
+        function eventHandler(){
+            var spanEl = document.createElement("span");
+            spanEl.setAttribute("style", "background-color:grey; font-size:10px;position: absolute;rigth:100%;padding:2px;bottom:100%;border-radius:3px;");
+            spanEl.innerText = "tooltip";
+            document.querySelectorAll("div")[0].onmouseover = function () {
+            this.appendChild(spanEl);
+            };
+            document.querySelectorAll("div")[0].onmouseout = function () {
+            this.removeChild(spanEl);
+            };
+
+            // timer
+            var tmer = setInterval( () => {
+                document.getElementById("timerClck").innerHTML = "<h1>"+new Date()+"</h1>";                
+            },1000);
+            // tmer.clearInterval();
+        }
+    </script>
+    <style>
+        
+    </style>
+</head>
+<body onload="eventHandler()">
+    <header>
+        <h2>
+            Timer
+        </h2>
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li>
+                    nav1
+                </li>
+                <li>
+                    nav2
+                </li>
+                <li>
+                    nav3
+                </li>
+            </ul>
+        </nav>
+        <article>
+            <div id="timerClck">            
+            </div>
+        </article>
+    </section>
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+</body>
+</html>
