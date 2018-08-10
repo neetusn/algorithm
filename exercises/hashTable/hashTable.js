@@ -3,7 +3,7 @@
 // stores data key and value pair
 function HashTable(size){
     this.buckets = Array(size);
-    this.numBuskets = this.buckets.length;
+    this.numBuckets = this.buckets.length;
 }
 function HashNode(key, value, next){
     this.key = key;
@@ -15,7 +15,7 @@ HashTable.prototype.hash = function (key){
     for(var i = 0;i<key.length;i++){
         total += key.charCodeAt(i);
     }
-    var res = total % this.numBuskets;
+    var res = total % this.numBuckets;
     return res;
 };
 HashTable.prototype.insert = function (key, value) {
