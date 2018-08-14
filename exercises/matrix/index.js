@@ -39,3 +39,39 @@ function matrix(n) {
 }
 
 module.exports = matrix;
+
+
+
+// var arr = [['A','A','K'],['A','S','K'],['A','K','K']];
+var arr = [['A','S'],['S','T']];
+var row = "", col = "", dia ="", dia2= "", diaRev = "", dia2Rev = "", resObj = {};
+for(var i=0,k=arr.length-1;i<arr.length;i++,k--){
+	row="", col="";
+	for(var j=0;j<arr.length;j++){
+		row += arr[i][j];
+		col += arr[j][i];		
+	}
+    dia += arr[i][i];		
+	dia2 += arr[i][k];
+	row = row.toLowerCase();
+	col = col.toLowerCase();
+    resObj[row] = resObj[row]+1 || 1;
+    resObj[col] = resObj[col]+1 || 1;
+}
+dia = dia.toLowerCase();
+diaRev = dia.split("").reverse().join("");
+dia2 = dia2.toLowerCase();
+dia2Rev = dia2.split("").reverse().join("");
+
+if(resObj[diaRev]){
+	resObj[diaRev] = resObj[diaRev]+1;
+}else {
+	resObj[dia] = resObj[dia]+1 || 1;
+}
+if(resObj[dia2Rev]){
+	resObj[dia2Rev] = resObj[dia2Rev]+1;
+}else {
+	resObj[dia2] = resObj[dia2]+1 || 1;
+}
+resObj;
+
