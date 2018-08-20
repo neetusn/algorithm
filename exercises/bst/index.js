@@ -28,6 +28,11 @@ class Node {
            this.right = new Node(data);
        }
     }
+    findMinNode(node){
+        if(node.left){
+            return findMinNode(node.left);
+        }
+    }
     removeNode(node, key)
     {
             
