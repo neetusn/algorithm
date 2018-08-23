@@ -1,0 +1,150 @@
+.indirect-tax-ui-txn-details-drawer {
+    @import "src/sass/variables/variables.scss";
+    @import "src/sass/common/common.scss";
+    @import "src/sass/common/hui-overrides.scss";
+    h3 {
+        font-weight: 600 !important;
+    }
+    .txn-details-table {
+        &.loading {
+            opacity: .2;
+        }
+        .content-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 5px 0;
+            td {
+                font-size: 1.4rem;
+            }
+            tr {
+                line-height: 3rem;
+            }
+            th {
+                text-transform: initial;
+                font-size: 1.4rem;
+            }
+        }
+        .footer-table {
+            width: 100%;
+            border-top: 1px solid #d9dee4;
+            border-bottom: 1px solid #d9dee4;
+            margin: 5px 0;
+            tr {
+                line-height: 4rem;
+            }
+            td {
+                font-weight: 600;
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .orginal-amount {
+        margin-right: 10px;
+    }
+    .line-through {
+        color: #c7c4c4;
+    }
+    .tax-overide-form {
+        background-color: rgb(244, 245, 248);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .6s linear;
+        position: relative;
+        height: 0;
+        border-bottom: 2px solid rgb(194, 198, 204);
+        padding: 0 30px;
+        position: relative;
+        .pointer {
+            width: 0;
+            height: 0;
+            display: inline-block !important;
+            margin-right: .6rem;
+            border-left: 10px solid transparent;
+            border-bottom: 14px solid #f4f5f8;
+            border-right: 10px solid transparent;
+            position: absolute;
+            top: -14px;
+            right: 88px;
+        }
+        &.show {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            margin: 15px -30px;
+            padding: 20px 30px;
+        }
+    }
+    .oon-page-msg {
+        margin: 0;
+    }
+    .close-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .customer-address {
+        height: 80px;
+        width: 75%;
+        & textarea {
+            height: 80px;
+        }
+    }
+    .double-check-amount {
+        text-decoration: none;
+        color: rgb(255, 141, 53);
+    }
+    .or-seprator {
+        white-space: nowrap;
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 74px;
+        font-size: 1.1rem;
+        margin-left: 1rem;
+    }
+    .shipping-address-info {
+        color: gray;
+        margin-top: 0;
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+    .item-mapping-section {
+        position: relative;
+    }
+    .table.expandable {
+        width: 100%;
+        border: 1px solid #ccc;
+        th,
+        td {
+            border: 0;
+        }
+        th {
+            text-transform: capitalize;
+            font-size: 1.4rem;
+        }
+        tr {
+            line-height: 3rem;
+        }
+        td {
+            padding: 0.3rem 0.9rem;
+            font-size: 1.4rem;
+        }
+    }
+    .action {
+        width: 60px;
+    }
+    .override-details-table {
+        .total {
+            font-weight: 600;
+            .table-cell {
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+        .table-row {
+            line-height: 3rem;
+        }
+    }
+}
