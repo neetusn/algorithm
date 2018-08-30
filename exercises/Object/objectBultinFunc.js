@@ -6,6 +6,12 @@ Object.entries();
 Object.apply();
 Object.call();
 Object.bind();
+Object.getOwnPropertyNames();
+Object.hasOwnProperty();
+
+// typeof and instanceof
+
+
 // ******* ASSIGN
 const object1 = {
     a: 1,
