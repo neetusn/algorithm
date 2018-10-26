@@ -82,3 +82,17 @@ function findPartition(arr, n){
 }
 findPartition(arr, arr.length);
     
+// *************************
+var arr = [1,2,3,4,5,6];
+var resArr=[];
+for(var k=0;k<=arr.length;k++){
+    for(var i=0;i<=arr.length;i++){
+      if(i!=k && i+1 != k && i+2 != k && arr[k]){
+          var ar = [arr[k], ...arr.slice(i,i+2)];
+          if(ar.length === 3){
+              resArr.push(ar);
+          }
+      }
+    }
+}
+// // 135,136,153,264,146

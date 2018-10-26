@@ -23,15 +23,20 @@ class Node {
        }else if(data < this.root ){
            this.left = new Node(data);
        }else if(data > this.root && this.right){
-           this.right(data);
-       }else if(data > this.root){
+           this.right.insert(data);
+       }else if(data > this.root){  
            this.right = new Node(data);
        }
     }
     findMinNode(node){
-        if(node.left){
-            return findMinNode(node.left);
+        if(node.left === null){
+            return node;
+        }else {
+            return this.findMinNode(node.left);
         }
+    }
+    getRootNode(){
+        return this.root;
     }
     removeNode(node, key)
     {

@@ -76,7 +76,7 @@ let mutatingReplace = ['a', 'b', 'c', 'd', 'e'];
 mutatingReplace.splice(2, 1, 30); // ['a', 'b', 30, 'd', 'e']  
 // OR
 mutatingReplace.splice(2, 1, 30, 31); // ['a', 'b', 30, 31, 'd', 'e']  
-
+//shani
 // REPLACE non mutating
 // arr.map()
 
@@ -112,6 +112,10 @@ person.age = 27;
 // Using array notation
 person['nationality'] = 'Irish';
 
+// getter and setter simpler syntax, same syntax for properties & methods, 
+// secure better daya quality, useful to do behind the scne
+Object.defineProperty(person, "reset",{get:function(){console.log("get method");}});
+
 //******** add non mutating obj
 const person = { name: 'John Doe', email: 'john@doe.com' };
 const samePerson = Object.assign({}, person, {
@@ -128,3 +132,17 @@ const person = { name: 'John Doe', email: 'john@doe.com', age: 27 };
 delete person.age;
 // array notation
 delete person['age'];
+
+// ******************loop through object and array
+// object forin
+for (const key in object) {
+  if (object.hasOwnProperty(key)) {
+    const element = object[key];
+    
+  }
+}
+// array forof
+for (const iterator of object) {
+  
+}
+// 

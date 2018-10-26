@@ -1,4 +1,4 @@
-// conststn time look up , used to store key value pair
+// constant time look up , used to store key value pair
 // hashTable and hashNode
 function HashTable(size){
 	this.buckets = Array(size);
