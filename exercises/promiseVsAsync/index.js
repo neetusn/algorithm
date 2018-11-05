@@ -67,3 +67,18 @@ async function addAllPromise2(){
 	t = await addStringPromise(t,'b2');
 	t = await addStringPromise(t,'c3');console.log(t);
 }//addAllPromise2();
+
+function loadScript(src){
+	return new Promise(function(resolve, reject){
+		var scrpt = document.createElement('script');
+		scrpt.src = src;
+		scrpt.onload = () => resolve(scrpt);
+		scrpt.onerror = () => resolve(new Error('scropt load error'+src));
+		document.head.append(scrpt);
+	});
+}
+var prm = loadScript('https://google.com');
+prm.then(
+val => console.log(val.src),
+error => console.log(error)
+);
