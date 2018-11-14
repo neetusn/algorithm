@@ -82,3 +82,24 @@ prm.then(
 val => console.log(val.src),
 error => console.log(error)
 );
+
+
+(async function loop(){
+	for(var i=0;i<10;i++){
+		await new Promise((resolve,reject)=>{
+			setTimeout(()=>{
+				console.log(i);
+				resolve();
+			},1000);
+		});
+	}
+})();
+(function loop(i){
+	if(i<10){
+		new Promise((resolve,reject)=>{
+			setTimeout(()=>{
+				console.log(i);resolve(i);
+			},1000);
+		}).then((res)=>{loop(res+1);});
+	}	
+})(0);
