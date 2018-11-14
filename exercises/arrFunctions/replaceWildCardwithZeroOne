@@ -1,0 +1,17 @@
+var all = [];
+function allComb(str){
+	var idx = str.indexOf('?');
+	if(idx < 0){
+		all.push(str);return;
+	}
+	var splitStr = str.split('');
+	var addZero = splitStr.slice();
+	var addOne = splitStr.slice();
+	addZero.splice(idx, 1, '0');
+	addOne.splice(idx, 1, '1');
+	
+	allComb(addZero.join(''));
+	allComb(addOne.join(''));
+}
+str = '100???';
+allComb(str);//all;
